@@ -1,1 +1,8 @@
+1.Frontend to API Gateway: The frontend connects with API Gateway.
+2.API Gateway to Lambda: Data is sent to AWS Lambda.
+3.Lambda to S3: Lambda uploads the document file to S3.
+4.Generate Signed URL: S3 generates a signed URL for the uploaded document.
+5.Return Signed URL to Lambda: The signed URL is returned to Lambda.
+6.Send to SQS: Lambda sends the unique ID, system prompt, and signed URL to an SQS queue.
+7.SQS to DynamoDB: Another Lambda function (triggered by SQS) reads the message from the queue and stores the data in DynamoDB.
 
